@@ -1,0 +1,87 @@
+\documentclass[11pt]{article}
+\textwidth 7.5in
+\textheight 10in
+\oddsidemargin -.5in
+\evensidemargin -.5in
+\topmargin -1in    
+\usepackage{graphics}        
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amscd,amssymb}
+\usepackage{latexsym}
+\usepackage{upref}
+\begin{document}
+\newcommand{\dsp}{\displaystyle}
+\newcommand{\ihat}{{\bf{i}}}
+\newcommand{\jhat}{{\bf{j}}}
+\newcommand{\khat}{{\bf{k}}}
+\newcommand{\Fhat}{{\bf{F}}}
+%\pagestyle{headings}
+%\markright{MATH 1120 Lab Worksheet \#1}
+
+\thispagestyle{empty}
+
+\noindent
+\sffamily
+\begin{center}
+\rule{7.5in}{2pt}
+
+\vspace{.2in}
+
+\begin{tabular}{p{4in}p{3.5in}}
+MATH 2825
+
+\vspace{.2in}
+
+Programming Lab \#1
+& 
+NAME:  $_{\rule{2.5in}{1pt}}$
+
+\vspace{.2in}
+
+Due Tuesday February 5th 2019 by 11:59 P.M.
+\\*[.2in]
+\end{tabular}
+\rule{7.5in}{2pt}
+
+\vspace{.1in}
+All work is to be done in a programming notebook either Mathematica and Jupyter (python3).  \\
+ Please refer to the blackboard site for commands and examples. \\
+ Submissions must be made electronically on blackboard, consider using a GitHub repository to store your code. \\
+   You will be graded on the output that I am able to generate from your commands.
+\end{center}
+%\begin{tabular}{*{26}{|c}|}\hline
+%A&B&C&D&E&F&G&H&I&J&K&L&M&N&O&P&Q&R&S&T&U&V&W&X&Y&Z\\ \hline
+%1&2&3&4&5&6&7&8&9&10&11&12&13&14&15&16&17&18&19&20&21&22&23&24&25&26\\ \hline
+%\end{tabular}
+
+\begin{enumerate}
+\item Let the last digit of your student number be $a$ (if it happens to be a zero use $a=10$).  Consider the function 
+\[f(x)=\sqrt{ax+1}.\]
+\begin{enumerate}
+%\item Graph the function from 0 to 1.
+\item Define the function $f(x)$ in the programming language.  Compute $f(0)$.
+\item Find the value $b$ for which the domain of the function is $[b,\infty)$.  Be sure to explain in words how you found $b$.
+\item Plot the function from $b$ to 5.
+
+\end{enumerate}
+\item Consider the function built by compositions, where $a$ is as defined above and $n$ is a natural number,
+\[
+f_0(x)=\frac1{a-x}\quad\quad\text{and}\quad\quad f_{n+1}=f_0\circ f_n.
+\]
+\begin{enumerate}
+\item Plot $f_0,\ f_1,\ f_2,\ f_3$ on the same screen and describe the effects of repeated composition.
+\item Make a prediction for what function $f_n(x)$ might be.  Explain in words. 
+\end{enumerate}
+\item The point $P(1,0)$ lies on the curve $y=\sin\left(\frac{2a\pi}x\right)$, for $a$ as defined above.
+\begin{enumerate}
+\item If $Q$ is the point $\left(x,\sin\left(\frac{2a\pi}x\right)\right)$, find the slope of the secant line $PQ$ for $x=2$, $x=1.5$, $x=1.1$, $x=1.01$ and $x=1.001$  You can do each individually or use an automation in the programming language.  Do these slopes appear to be approaching a limit, explain in words. \label{a}
+\item Use a graph of the curve to explain why the slopes of the secant lines in part \ref{a} are not close to the slopes of the tangent line at $P$.
+\item By choosing appropriate secant lines, estimate the slope of the tangent line at $P$.
+\end{enumerate}
+\end{enumerate}
+\end{document}
+
+
+
+
+

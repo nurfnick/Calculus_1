@@ -1,0 +1,433 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12671,        423]
+NotebookOptionsPosition[     11027,        365]
+NotebookOutlinePosition[     11367,        380]
+CellTagsIndexPosition[     11324,        377]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Computing the Area Under a Curve", "Section",
+ CellChangeTimes->{{3.6708539475021486`*^9, 3.6708539650108995`*^9}}],
+
+Cell["\<\
+Imagine you have a function f(x) and what the (signed) area under the curve \
+for a<x<b.  You could integrate, but what fun would that be?  Instead we \
+shall figure it out with Riemann sums.\
+\>", "Text",
+ CellChangeTimes->{{3.6708539739917974`*^9, 3.670854043962142*^9}}],
+
+Cell["We saw in class that ", "Text",
+ CellChangeTimes->{{3.6708540494461417`*^9, 3.670854058233142*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["R", "n"], "=", 
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", 
+      SubscriptBox["x", "i"], "]"}], " ", "\[CapitalDelta]x"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6708540801641417`*^9, 3.6708540927041416`*^9}, {
+  3.670854131594142*^9, 3.6708541985551414`*^9}}],
+
+Cell["and that", "Text",
+ CellChangeTimes->{{3.6708542012701416`*^9, 3.6708542054561415`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"A", "=", 
+  RowBox[{"Limit", "[", 
+   RowBox[{
+    SubscriptBox["R", "n"], ",", 
+    RowBox[{"n", "\[Rule]", " ", "\[Infinity]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.670854208590142*^9, 3.670854244002142*^9}}],
+
+Cell["So howdo we do this?", "Text",
+ CellChangeTimes->{{3.6708540693011417`*^9, 3.6708540714491415`*^9}, {
+  3.670854249215142*^9, 3.670854258837142*^9}}],
+
+Cell["Recall that \[CapitalDelta]x = (b - a)/n", "Text",
+ CellChangeTimes->{{3.6708543647621417`*^9, 3.670854371221142*^9}}],
+
+Cell[TextData[{
+ "First lets set it up with right end points.  So ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "i"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "=a+i",
+ "\[CapitalDelta]x"
+}], "Text",
+ CellChangeTimes->{{3.670854334800142*^9, 3.670854425764142*^9}}],
+
+Cell["To illustrate, let\[CloseCurlyQuote]s put this all together.", "Text",
+ CellChangeTimes->{{3.6708544325341415`*^9, 3.6708544780011415`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example  for Riemann", "Section",
+ CellChangeTimes->{{3.670854490455142*^9, 3.6708545127911415`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Find", "the", "area", "under", "the", "curve", "for", 
+   RowBox[{"f", "[", "x", "]"}]}], "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", "^", "5"}], "-", 
+    RowBox[{"4", "for", "1"}]}], "<", "x", "<", 
+   RowBox[{"10", "using", "right", "sided", "Riemann", 
+    RowBox[{"Sum", "."}]}]}]}]], "Input",
+ CellChangeTimes->{{3.670854517455142*^9, 3.6708545725011415`*^9}, {
+  3.6708547868481417`*^9, 3.670854820010142*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], "=", 
+   RowBox[{
+    RowBox[{"x", "^", "5"}], "-", "4"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b", "=", "10"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dx", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"b", "-", "a"}], ")"}], "/", "n"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"x", "[", "i_", "]"}], "=", 
+   RowBox[{"a", "+", 
+    RowBox[{"i", " ", "dx"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"R", "[", "n_", "]"}], "=", 
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", 
+      RowBox[{"x", "[", "i", "]"}], "]"}], " ", "dx"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.670854574884142*^9, 3.6708546679201417`*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"27", " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", "8019"}], "+", 
+     RowBox[{"49995", " ", 
+      SuperscriptBox["n", "2"]}], "+", 
+     RowBox[{"66666", " ", 
+      SuperscriptBox["n", "3"]}], "+", 
+     RowBox[{"24686", " ", 
+      SuperscriptBox["n", "4"]}]}], ")"}]}], 
+  RowBox[{"4", " ", 
+   SuperscriptBox["n", "4"]}]]], "Output",
+ CellChangeTimes->{3.670854670042142*^9}]
+}, Open  ]],
+
+Cell["How do we check our answer?", "Text",
+ CellChangeTimes->{{3.670854681134142*^9, 3.6708546940201416`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"R", "[", "n", "]"}], ",", 
+   RowBox[{"n", "\[Rule]", " ", "Infinity"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "10"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.6708546966471415`*^9, 3.6708547298361416`*^9}}],
+
+Cell[BoxData[
+ FractionBox["333261", "2"]], "Output",
+ CellChangeTimes->{3.6708547303761415`*^9}],
+
+Cell[BoxData[
+ FractionBox["333261", "2"]], "Output",
+ CellChangeTimes->{3.6708547305481415`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["What would change for left endpoints?", "Section",
+ CellChangeTimes->{{3.670854744504142*^9, 3.670854761121142*^9}}],
+
+Cell["Only the starting and stopping of the sum!", "Text",
+ CellChangeTimes->{{3.6708547644531417`*^9, 3.6708547793431416`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Find", "the", "area", "under", "the", "curve", "for", 
+   RowBox[{"f", "[", "x", "]"}]}], "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", "^", "5"}], "-", 
+    RowBox[{"4", "for", "1"}]}], "<", "x", "<", 
+   RowBox[{"10", "using", " ", "left", " ", "sided", " ", "Riemann", " ", 
+    RowBox[{"Sum", "."}]}]}]}]], "Input",
+ CellChangeTimes->{{3.670854517455142*^9, 3.6708545725011415`*^9}, {
+  3.6708547868481417`*^9, 3.6708548469731417`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], "=", 
+   RowBox[{
+    RowBox[{"x", "^", "5"}], "-", "4"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b", "=", "10"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dx", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"b", "-", "a"}], ")"}], "/", "n"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"x", "[", "i_", "]"}], "=", 
+   RowBox[{"a", "+", 
+    RowBox[{"i", " ", "dx"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"R", "[", "n_", "]"}], "=", 
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", 
+      RowBox[{"x", "[", "i", "]"}], "]"}], " ", "dx"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "0", ",", 
+      RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.670854860964142*^9, 3.670854864021142*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["How could we do stranger points?", "Section",
+ CellChangeTimes->{{3.670854877445142*^9, 3.6708548995451417`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Midpoints", "?"}]], "Input",
+ CellChangeTimes->{{3.6708549025651417`*^9, 3.6708549066971416`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"x", "[", "i", "]"}], "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"a", "+", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"i", "-", "1"}], ")"}], "dx"}], "+", "a", " ", "+", 
+      RowBox[{"i", " ", "dx"}]}], ")"}], "/", "2"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6708549091961417`*^9, 3.6708549610551414`*^9}}],
+
+Cell["Geometric mean?", "Text",
+ CellChangeTimes->{{3.6708549685051417`*^9, 3.670854979892142*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"x", "[", "i", "]"}], "=", 
+  RowBox[{"Sqrt", "[", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"a", "+", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"i", "-", "1"}], ")"}], "dx"}]}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"a", " ", "+", 
+      RowBox[{"i", " ", "dx"}]}], ")"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6708549834161415`*^9, 3.6708550181801414`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Maximums", "?"}]], "Input",
+ CellChangeTimes->{{3.670855030109142*^9, 3.670855035962142*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"x", "[", "i", "]"}], "=", 
+  RowBox[{"Max", "[", 
+   RowBox[{
+    RowBox[{"f", "[", "x", "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", 
+      RowBox[{"a", "+", 
+       RowBox[{"i", " ", "dx"}]}], ",", 
+      RowBox[{"a", "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"i", "+", "1"}], ")"}], " ", "dx"}]}]}], "}"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.670855038340142*^9, 3.6708550818801417`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example for geometric", "Section",
+ CellChangeTimes->{{3.67085525215662*^9, 3.670855282507655*^9}}],
+
+Cell["\<\
+Find the Riemann sum using geometric averages of the endpoints for f[x]=1/x^2 \
+on 1<x<9.\
+\>", "Text",
+ CellChangeTimes->{{3.6708552857169757`*^9, 3.670855344533857*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", 
+  RowBox[{"x", ",", "i", ",", "f", ",", "a", ",", "b"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], "=", 
+   RowBox[{"1", "/", 
+    RowBox[{"x", "^", "2"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b", "=", "2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dx", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"b", "-", "a"}], ")"}], "/", "n"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"x", "[", "i_", "]"}], "=", 
+   RowBox[{"Sqrt", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"a", "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"i", "-", "1"}], ")"}], "dx"}]}], ")"}], 
+     RowBox[{"(", 
+      RowBox[{"a", " ", "+", 
+       RowBox[{"i", " ", "dx"}]}], ")"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"R", "[", "n_", "]"}], "=", 
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", 
+      RowBox[{"x", "[", "i", "]"}], "]"}], " ", "dx"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"R", "[", "n", "]"}], ",", 
+   RowBox[{"n", "\[Rule]", " ", "Infinity"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "a", ",", "b"}], "}"}]}], 
+  "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.6708553468480883`*^9, 3.6708554335797606`*^9}, {
+  3.67085547167957*^9, 3.670855506095011*^9}, {3.670855640414442*^9, 
+  3.67085564050045*^9}, {3.670855851858343*^9, 3.6708558524667473`*^9}, {
+  3.6708561020673046`*^9, 3.6708561086815777`*^9}, {3.670856173825925*^9, 
+  3.6708562404990425`*^9}}]
+}, Open  ]]
+},
+WindowSize->{767, 742},
+WindowMargins->{{74, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (July 1, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 121, 1, 70, "Section"],
+Cell[704, 25, 283, 5, 49, "Text"],
+Cell[990, 32, 105, 1, 30, "Text"],
+Cell[1098, 35, 404, 11, 31, "Input"],
+Cell[1505, 48, 94, 1, 30, "Text"],
+Cell[1602, 51, 241, 6, 31, "Input"],
+Cell[1846, 59, 155, 2, 30, "Text"],
+Cell[2004, 63, 124, 1, 30, "Text"],
+Cell[2131, 66, 281, 9, 30, "Text"],
+Cell[2415, 77, 146, 1, 30, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2598, 83, 107, 1, 70, "Section"],
+Cell[2708, 86, 454, 11, 52, "Input"],
+Cell[CellGroupData[{
+Cell[3187, 101, 931, 30, 132, "Input"],
+Cell[4121, 133, 429, 14, 52, "Output"]
+}, Open  ]],
+Cell[4565, 150, 111, 1, 30, "Text"],
+Cell[CellGroupData[{
+Cell[4701, 155, 399, 10, 52, "Input"],
+Cell[5103, 167, 97, 2, 46, "Output"],
+Cell[5203, 171, 97, 2, 46, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5349, 179, 122, 1, 70, "Section"],
+Cell[5474, 182, 128, 1, 30, "Text"],
+Cell[5605, 185, 475, 11, 52, "Input"],
+Cell[6083, 198, 956, 31, 132, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7076, 234, 119, 1, 70, "Section"],
+Cell[7198, 237, 122, 2, 31, "Input"],
+Cell[7323, 241, 374, 11, 31, "Input"],
+Cell[7700, 254, 99, 1, 30, "Text"],
+Cell[7802, 257, 412, 13, 31, "Input"],
+Cell[8217, 272, 117, 2, 31, "Input"],
+Cell[8337, 276, 465, 15, 31, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8839, 296, 105, 1, 70, "Section"],
+Cell[8947, 299, 181, 4, 30, "Text"],
+Cell[9131, 305, 1880, 57, 212, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
