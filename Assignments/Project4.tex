@@ -1,0 +1,91 @@
+\documentclass[11pt]{article}
+\textwidth 7.5in
+\textheight 10in
+\oddsidemargin -.5in
+\evensidemargin -.5in
+\topmargin -1in    
+\usepackage{graphics}        
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,amscd,amssymb}
+\usepackage{latexsym}
+\usepackage{upref}
+\begin{document}
+\newcommand{\dsp}{\displaystyle}
+\newcommand{\ihat}{{\bf{i}}}
+\newcommand{\jhat}{{\bf{j}}}
+\newcommand{\khat}{{\bf{k}}}
+\newcommand{\Fhat}{{\bf{F}}}
+%\pagestyle{headings}
+%\markright{MATH 1120 Lab Worksheet \#1}
+
+\thispagestyle{empty}
+
+\noindent
+\sffamily
+\begin{center}
+\rule{7.5in}{2pt}
+
+\vspace{.2in}
+
+\begin{tabular}{p{4in}p{3.5in}}
+MATH 2825
+
+\vspace{.2in}
+
+Mathematica Lab \#4
+& 
+NAME:  $_{\rule{2.5in}{1pt}}$
+
+\vspace{.2in}
+
+Due Monday December 5th 2022 by 11:30 A.M.
+\\*[.2in]
+\end{tabular}
+\rule{7.5in}{2pt}
+
+\vspace{.1in}
+All work is to be done in a programming notebook either Mathematica and Jupyter (python3).  \\
+ Please refer to the blackboard site for commands and examples. \\
+ Submissions must be made electronically on blackboard, consider using a GitHub repository to store your code. \\
+   You will be graded on the output that I am able to generate from your commands.
+\end{center}
+%\begin{tabular}{*{26}{|c}|}\hline
+%A&B&C&D&E&F&G&H&I&J&K&L&M&N&O&P&Q&R&S&T&U&V&W&X&Y&Z\\ \hline
+%1&2&3&4&5&6&7&8&9&10&11&12&13&14&15&16&17&18&19&20&21&22&23&24&25&26\\ \hline
+%\end{tabular}
+
+\begin{enumerate}
+\item Let $a$ be the digit corresponding to the last digit of your student id number, if it is 0 use 10.  Consider the function 
+\[f(x)=x^6-x^5- a x^4-x^2+x-1\]
+\begin{enumerate}
+\item Graph the function on an interval so that you can approximate the roots of the function.  State your approximations clearly.
+\item Use a built-in command to find all roots.  These built-in command may use Newton's method to solve for roots.
+\end{enumerate}
+
+
+
+
+\item Consider the curve $y=x^a$, where $a$ is defined as above except if 1 use 11.
+
+\begin{enumerate}
+\item Graph the equation from 0 to 2. 
+\item Express the area under the curve as a limit and compute this limit.
+\item Check your answer by using a definite integral.  Explain in words why these must be the same.
+
+\end{enumerate}
+\item Consider the function, 
+\[
+Si(x)=\int_0^x\frac{\sin t}t dt
+\]
+\begin{enumerate}
+\item Plot $Si(x)$ for $0\leq x\leq 20$.
+\item Find the values for $x$ where there are local extrema, explain in words where all values would be.
+\item Solve $Si(x)=1$.
+\end{enumerate}
+\end{enumerate}
+\end{document}
+
+
+
+
+
